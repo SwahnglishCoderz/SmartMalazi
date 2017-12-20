@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('','PagesController@index');
 Auth::routes();
 
-Route::get('/home', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::get('custom/register','CustomAuthController@showRegisterForm')->name('custom.register');
+Route::post('custom/register','CustomAuthController@register');
+
+Route::get('custom/login','CustomAuthController@showLoginForm')->name('custom.login');
+Route::post('custom/login','CustomAuthController@login');
