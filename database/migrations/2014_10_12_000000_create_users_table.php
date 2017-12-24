@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('lastname');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('level');
+            $table->integer('level'); //1 for system admin 2 for lodge admins
             $table->integer('lodge_id');
             $table->rememberToken();
             $table->timestamps();

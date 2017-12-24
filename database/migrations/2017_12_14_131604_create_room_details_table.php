@@ -18,8 +18,8 @@ class CreateRoomDetailsTable extends Migration
             $table->integer('lodge_id');
             $table->string('room_name');
             $table->string('price');
-            $table->string('room_status');
-            $table->string('lodge_status')->nullable();
+            $table->string('room_status'); //available or not-available.
+            $table->string('lodge_status')->nullable(); //full or available
             $table->timestamps();
         });
     }

@@ -21,3 +21,7 @@ Route::post('custom/register','CustomAuthController@register');
 
 Route::get('custom/login','CustomAuthController@showLoginForm')->name('custom.login');
 Route::post('custom/login','CustomAuthController@login');
+
+Route::get('lodge/index','LodgeController@index')->name('lodge.index');
+Route::get('lodge/create','LodgeController@create')->name('lodge.create');
+Route::post('lodge/store','LodgeController@store')->name('lodge.store');
