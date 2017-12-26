@@ -27,7 +27,7 @@
         
         </div>
 
-        @if(count($lodges)>1)
+        @if(count($lodges)>=1)
         @foreach($lodges as $lodge)
         <div class="box">
                 <div class="box-header with-border">
@@ -65,7 +65,7 @@
     
               
               
-              {{{$lodges->links()}}}
+              {{$lodges->links()}}
               @else
               <p><h1>No Lodges Found!!</h1></p>
             
