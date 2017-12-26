@@ -27,24 +27,25 @@
         
         </div>
 
-        @if(count($lodges)>=1)
-        @foreach($lodges as $lodge)
-        <div class="box">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Lodges</h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                   
-                  <table class="table table-bordered">
-                    <tr>
-                      <th style="width: 10px">No</th>
-                      <th>Logde</th>
-                      <th style="width: 60px">Edit</th>
-                      <th style="width: 60px">Disable/Enable</th>
-                      <th style="width: 60px">Delete</th>
-                      <th style="width: 60px">View</th>
-                    </tr>
+        <div class="box-header with-border">
+            <h3 class="box-title">Lodges</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                
+              <table class="table table-bordered">
+                <tr>
+                  <th style="width: 10px">No</th>
+                  <th>Logde</th>
+                  <th style="width: 60px">Edit</th>
+                  <th style="width: 60px">Disable/Enable</th>
+                  <th style="width: 60px">Delete</th>
+                  <th style="width: 60px">View</th>
+                </tr>
+                @if(count($lodges)>=1)
+                @foreach($lodges as $lodge)
+                <div class="box">
+                
                     <tr>
                             <td></td>
                             <td >{{$lodge->lodge_name}}</d>
@@ -53,8 +54,9 @@
                             <td style="width: 60px"><a href="" class="btn btn-danger">Delete</a></td>
                             <td style="width: 60px"><a href="" class="btn btn-success">View</a></td>
                     </tr>
-                  </table>
                   @endforeach
+
+                  </table>
                   
                 </div>
                 <!-- /.box-body -->
