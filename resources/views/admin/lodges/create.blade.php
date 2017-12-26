@@ -4,15 +4,6 @@
 <div class="container">
 <div class="row">
 <div class="col-md-offset-3 col-md-6">
-
-@if(count($errors)>0)
-@foreach($errors->all() as $error)
-<div class="alert alert-danger">{{$error}}</div>
-
-@endforeach
-@endif
-
-
 <div class="box box-primary">
 <div class="box-header">
 <h3 class="title" align="center">Lodge Registration</h3>
@@ -50,9 +41,5 @@
 
 
 </div>
-</body>
 
-
-
-</html>
 @endsection

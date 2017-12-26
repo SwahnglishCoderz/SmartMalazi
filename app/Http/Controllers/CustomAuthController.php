@@ -63,4 +63,17 @@ class CustomAuthController extends Controller
         ]);
 
     }
+
+
+
+    public function returntohome(){
+        return view('admin.index');
+    }
+
+
+
+
+
+
+
 }

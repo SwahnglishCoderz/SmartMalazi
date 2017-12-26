@@ -22,6 +22,10 @@ Route::post('custom/register','CustomAuthController@register');
 Route::get('custom/login','CustomAuthController@showLoginForm')->name('custom.login');
 Route::post('custom/login','CustomAuthController@login');
 
-Route::get('lodge/index','LodgeController@index')->name('lodge.index');
-Route::get('lodge/create','LodgeController@create')->name('lodge.create');
-Route::post('lodge/store','LodgeController@store')->name('lodge.store');
+Route::get('admin/lodges/index','LodgeController@index')->name('lodges.index');
+Route::get('admin/lodges/create','LodgeController@create')->name('lodges.create');
+Route::post('admin/lodges/store','LodgeController@store')->name('lodges.store');
+
+Route::get('admin/index','CustomAuthController@returntohome')->name('admin.index');
+
+

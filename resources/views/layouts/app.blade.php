@@ -13,14 +13,52 @@
     
 
     <!-- Styles -->
-   
+    <style>
+            html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 100;
+                height: 100vh;
+                margin: 0;
+            }
+    
+            ul {
+                list-style-type: none;
+              }
+    
+              .main-footer {
+                height: 30px;
+               
+                background-color: #222222;
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-left: 20px;
+                padding-right: 20px;
+              } 
+    
+              .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                
+            }
+
+    
+        </style>
 </head>
 <body>
-    <div id="app">
+    
         
          @include('inc.navbar')
+         <div class="container">
          @include('inc.messages')
         @yield('content')
+        @include('inc.footer')
     </div>
 
     <!-- Scripts -->

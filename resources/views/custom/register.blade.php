@@ -2,6 +2,11 @@
 @extends('layouts.app')
 @section('content')
 <div class="container">
+    <ul class="pager" style="margin-top:-1%;margin-bottom:1%;">
+        <li class="previous" ><a href="{{route('admin.index')}}"><span aria-hidden="true">&larr;</span>Back</a>
+      </li>				
+      </ul>
+
 <div class="row">
 <div class="col-md-offset-3 col-md-6">
 

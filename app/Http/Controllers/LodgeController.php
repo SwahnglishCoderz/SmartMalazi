@@ -12,12 +12,13 @@ class LodgeController extends Controller
     public function index()
     {
         //$lodges = Lodge::where('user_id',Auth::user()->id)->get();
-        $lodges = Lodge::all();
-        $counter = 0;
+        $lodges=Lodge::orderBy('created_at','desc')->paginate(2);
+        return view('admin.lodges.index')->with('lodges',$lodges);
+        //$counter = 0;
 
-        return view('admin.lodges.index')
-        ->with('lodges',$lodges)
-        ->with('counter',$counter);
+       // return view('admin.lodges.index')
+       // ->with('lodges',$lodges)
+       // ->with('counter',$counter);
     }
 
     public function create()

@@ -1,17 +1,44 @@
 @extends('layouts.app')
 @section('content')
-    <div>
-        <p>Welcome Admin</p>
-        <p>This is the report since your last logout</p>
-    </div>
 
-    <div>
-        <p>You can...</p>
-        <ul>
-            <p>Create, Read and Update Lodges.</p>
-            <p>Delete Lodge (but under password authentication).</p>
-            <p>Create, Read, Delete and Update Lodge Admins.</p>
-            <p>Enable and Disable Lodges</p>
-        </ul>
-    </div>
+<div class="container">
+
+
+        <div class="jumbotron text-center">
+                <h1>smartMalazi!</h1>
+                <p>First Laravel Application from Scratch by Said Mzee!!</p>
+                
+                </div>
+        
+        
+        <div class="row">
+
+<div class="col-md-offset-4">
+
+        @if(Auth::user()->level==1)
+        
+               
+        <div class="links">
+                <a href="{{ route('custom.register') }}">Register Lodge Admin</a>
+                <a href="{{ route('lodges.index') }}">Lodges</a>
+                
+            </div>
+        
+            @endif
+     
+</div>
+
+
+        </div>
+ 
+                      
+
+
+              
+        
+           
+        
+</div>
+
+    
 @endsection
