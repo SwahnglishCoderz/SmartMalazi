@@ -26,6 +26,7 @@ Route::get('admin/lodges/index','LodgeController@index')->name('lodges.index');
 Route::get('admin/lodges/create','LodgeController@create')->name('lodges.create');
 Route::post('admin/lodges/store','LodgeController@store')->name('lodges.store');
 
-Route::get('admin/index','CustomAuthController@returntohome')->name('admin.index');
+Route::get('admin/lodges/show/{id}','LodgeController@show')->name('lodges.show');
 
+Route::get('admin/index','CustomAuthController@returntohome')->name('admin.index');
 

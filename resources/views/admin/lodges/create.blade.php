@@ -10,7 +10,7 @@
 </div>
 <div class="box-body">
 
-<form class="form" action="{{route('lodge.store')}}" method="post">
+<form class="form" action="{{route('lodges.store')}}" method="post">
  {{csrf_field()}}
   
     <div class="form-group">
@@ -33,13 +33,6 @@
 </div>
 
 </div>
-
-
-
-
-
-
-
 </div>
 
 @endsection

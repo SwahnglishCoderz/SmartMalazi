@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container">
+
+
+   <div class="container">
 
   
   
@@ -40,7 +42,7 @@
                   <th style="width: 60px">Edit</th>
                   <th style="width: 60px">Disable/Enable</th>
                   <th style="width: 60px">Delete</th>
-                  <th style="width: 60px">View</th>
+                
                 </tr>
                 @if(count($lodges)>=1)
                 @foreach($lodges as $lodge)
@@ -48,11 +50,11 @@
                 
                     <tr>
                             <td></td>
-                            <td >{{$lodge->lodge_name}}</d>
+                            <td ><a href="/admin/lodges/show/{{$lodge->lodge_id}}">{{$lodge->lodge_name}}</a></td>
                             <td style="width: 60px"><a href="" class="btn btn-success">Edit</a></td>
                             <td style="width: 60px"><a href="" class="btn btn-success">Enable</a></td>
                             <td style="width: 60px"><a href="" class="btn btn-danger">Delete</a></td>
-                            <td style="width: 60px"><a href="" class="btn btn-success">View</a></td>
+                            
                     </tr>
                   @endforeach
 

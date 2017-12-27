@@ -30,7 +30,7 @@ class LodgeController extends Controller
     {
         $this->validation($request);
         Lodge::create($request->all());
-        return redirect('/');
+        return redirect('admin/lodges/index')->with('success','Lodge Added Successfully!!');
     }
 
     public function validation($request){
@@ -39,4 +39,21 @@ class LodgeController extends Controller
         ]);
 
     }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+        $lodges=Lodge::find($id);
+
+        return view('admin.lodges.show')->with('lodges',$lodges);
+    }
+   
+
 }
