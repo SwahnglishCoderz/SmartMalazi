@@ -6,7 +6,7 @@
 
         <div class="jumbotron text-center">
                 <h1>smartMalazi!</h1>
-                <p>First Laravel Application from Scratch by Said Mzee!!</p>
+                <p></p>
                 
                 </div>
         

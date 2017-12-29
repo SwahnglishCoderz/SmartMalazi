@@ -21,7 +21,13 @@ class CustomAuthController extends Controller
     }
 
     public function showLoginForm(){
-        
+        //check if user is logged in
+        if (Auth::check() && Auth::user()->level==1) {
+            return redirect('admin/index');
+        }
+        else if (Auth::check() && Auth::user()->level==2) {
+            return redirect('lodgeadmin/index');
+        }
         return view('custom.login');
     }
     

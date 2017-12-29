@@ -39,14 +39,7 @@ class LodgeController extends Controller
         ]);
 
     }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show($id)
     {
         //
@@ -55,5 +48,35 @@ class LodgeController extends Controller
         return view('admin.lodges.show')->with('lodges',$lodges);
     }
    
+
+    public function edit($id)
+    {
+        //
+        $lodges=Lodge::find($id);
+        
+        return view('admin.lodges.edit')->with('lodges',$lodges);
+    }
+
+
+    public function update(Request $request, $id)
+    {
+     
+        $this->validate($request,[]);
+   
+        $lodges=Lodge::find($id);
+        
+        $lodges->lodge_name=$request->lodge_name;
+        
+        $lodges->save();
+        
+        return redirect('admin/lodges/index')->with('success','Lodge name Edited');
+    }
+
+    public function delete($id)
+    {
+        Lodge::destroy($id);
+
+        return redirect('admin/lodges/index')->with('success','Lodge deleted successfully');
+    }
 
 }

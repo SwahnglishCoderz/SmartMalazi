@@ -51,9 +51,9 @@
                     <tr>
                             <td></td>
                             <td ><a href="/admin/lodges/show/{{$lodge->lodge_id}}">{{$lodge->lodge_name}}</a></td>
-                            <td style="width: 60px"><a href="" class="btn btn-success">Edit</a></td>
+                            <td style="width: 60px"><a href="/admin/lodges/edit/{{$lodge->lodge_id}}" class="btn btn-primary">Edit</a></td>
                             <td style="width: 60px"><a href="" class="btn btn-success">Enable</a></td>
-                            <td style="width: 60px"><a href="" class="btn btn-danger">Delete</a></td>
+                            <td style="width: 60px"><a href="/admin/lodges/delete/{{$lodge->lodge_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete the lodge?') ">Delete</a></td>
                             
                     </tr>
                   @endforeach
