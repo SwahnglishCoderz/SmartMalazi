@@ -11,13 +11,44 @@
 |
 */
 
-Route::get('','PagesController@index');
-Auth::routes();
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::post('/logout','LoginController@logout');
 
-Route::get('custom/register','CustomAuthController@showRegisterForm')->name('custom.register');
-Route::post('custom/register','CustomAuthController@register');
+//error-routes
+Route::get('/not-allowed','ErrorController@notAllowed');
 
-Route::get('custom/login','CustomAuthController@showLoginForm')->name('custom.login');
-Route::post('custom/login','CustomAuthController@login');
+//visitors links
+Route::group(['middleware' => 'visitors'], function (){
+    Route::get('/login','LoginController@login');
+    Route::post('/login','LoginController@postLogin');
+    Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
+    Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
+
+    Route::get('/reset/{email}/{resetCode}','ForgotPasswordController@resetPassword');
+    Route::post('/reset/{email}/{resetCode}','ForgotPasswordController@postResetPassword');
+});
+
+//admin links
+Route::group(['middleware' => 'admin'], function (){
+    Route::get('/register','RegistrationController@register');
+    Route::post('/register','RegistrationController@postRegister');
+    Route::get('/lodges','LodgeController@index')->name('lodges.index');
+    Route::get('/lodges/create','LodgeController@create')->name('lodges.create');
+    Route::post('/lodges/store','LodgeController@store')->name('lodges.store');
+    Route::post('/lodges/update/{id}','LodgeController@update');
+
+    Route::get('/lodges/show/{id}','LodgeController@show')->name('lodges.show');
+    Route::get('/lodges/edit/{id}','LodgeController@edit')->name('lodges.edit');
+    Route::get('/admin','AdminController@index')->name('admin.index');
+});
+
+//lodge admin links
+
+Route::group(['middleware' => 'lodge-admin'], function (){
+    Route::get('/lodge-admin','LodgeAdminController@index');
+});
+
+Route::get('/activate/{email}/{activationCode}','ActivationController@activate') ;

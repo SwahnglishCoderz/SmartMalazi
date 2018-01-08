@@ -21,6 +21,8 @@ class CreateRoomGalleriesTable extends Migration
             $table->string('picture_caption');
             $table->timestamps();
         });
+
+        //we ae storing pictures in the server location.
     }
 
     /**

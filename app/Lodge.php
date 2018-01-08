@@ -12,4 +12,13 @@ class Lodge extends Model
     public $primaryKey='lodge_id';
     public $timestamps=true;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'lodge_name', 'disable_enable',
+    ];
+
 }
