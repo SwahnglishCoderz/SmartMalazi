@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::post('/logout','LoginController@logout');
 
 //error-routes

@@ -15,7 +15,7 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Edit Lodge Name</div>
                 <div class="panel-body">
-                    <form class="form" action="/admin/lodges/update/{{$lodges->lodge_id}}" method="post">
+                    <form class="form" action="/lodges/update/{{$lodges->lodge_id}}" method="post">
                         {{csrf_field()}}
                         <input type="hidden" name="method" value="PUT"/>
                         <div class="form-group">

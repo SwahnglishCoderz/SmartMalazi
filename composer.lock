@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "90c56c322d4d7f2cad2853e8a32ba074",
+    "content-hash": "be0d1a0ba7ae12061743b34f09be6533",
     "packages": [
         {
             "name": "cartalyst/sentinel",
@@ -1462,7 +1462,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/console/zipball/8394c8ef121949e8f858f13bc1e34f05169e4e7d",
                 "reference": "8394c8ef121949e8f858f13bc1e34f05169e4e7d",
-
                 "shasum": ""
             },
             "require": {
