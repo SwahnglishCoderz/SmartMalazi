@@ -10,8 +10,6 @@
 @extends('layouts.master')
 
 @section('content')
-
-
         <div class="row">
                 <div class="col-md-4">
 
@@ -37,15 +35,19 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 
+
                                     <input type="email" name="email" class="form-control" placeholder="example@server.com" required>
+
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
+
 
                                     <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+
                                 </div>
                             </div>
 
@@ -53,7 +55,9 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
+
                                     <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+
                                 </div>
                             </div>
 
@@ -62,6 +66,7 @@
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
                                     <input type="password" name="password" class="form-control" placeholder="Password" required>
+
                                 </div>
                             </div>
 
@@ -73,13 +78,12 @@
                                 </div>
                             </div>
 
-                            
-
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-bed"></i></span>
 
                                     <select  class="form-control" name="lodge_id" required>
+
                                         <option >--Select lodge--</option>
                                         <option value="1">whitehouse</option>
                                         <option value="2">Melisa</option>

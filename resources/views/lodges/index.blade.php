@@ -4,7 +4,9 @@
         <div class="col-md-1">
 
             <ul class="pager" style="margin-top:-3%;margin-bottom:1%;">
+
                 <li class="previous" ><a href="/admin/"><span aria-hidden="true">&larr;</span>Back</a>
+
                 </li>
             </ul>
         </div>
@@ -15,6 +17,7 @@
 
 
     </div>
+    
 <div class="row">
     <div class="col-md-12">
 
@@ -61,7 +64,5 @@
             </div>
 
     </div>
-
-    
 @endsection
 

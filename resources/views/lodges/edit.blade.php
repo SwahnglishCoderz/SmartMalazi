@@ -10,6 +10,7 @@
     </div>
 
     <div class="row">
+
         <div class="col-md-offset-3 col-md-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">Edit Lodge Name</div>
@@ -21,10 +22,12 @@
                             <input type="hidden" value="0" name="disable_enable" />
                             <input type="text" class="form-control" value="{{$lodges->lodge_name}}" name="lodge_name" placeholder="Lodge Name">
                         </div>
-                        <button type="submit" class="btn btn-primary">Create Lodge</button>
+                        
+                        <button type="submit" class="btn btn-primary">Update Lodge</button>
                     </form>
                 </div>
             </div>
         </div>
+
     </div>
 @endsection

@@ -1,4 +1,3 @@
-
     <nav class="navbar navbar-static-top" id="bar">
              <a class="navbar-brand" id="brand" href="#">SmartMalazi</a>
         <ul class="nav nav-pills pull-right">
@@ -23,5 +22,11 @@
         </ul>
     </nav>
     
-   
-  
+    <h3 class="text-muted">
+    @if(Sentinel::check())
+        Hello, {{ Sentinel::getUser()->first_name }}
+    @else
+        Smart Malazi
+    @endif
+    </h3>
+</header>

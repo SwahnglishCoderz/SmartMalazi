@@ -1462,6 +1462,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/console/zipball/8394c8ef121949e8f858f13bc1e34f05169e4e7d",
                 "reference": "8394c8ef121949e8f858f13bc1e34f05169e4e7d",
+
                 "shasum": ""
             },
             "require": {

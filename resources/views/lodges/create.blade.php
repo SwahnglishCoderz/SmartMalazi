@@ -17,6 +17,7 @@
                     <h3 class="panel-title" align="center">Lodge Registration</h3>
                 </div>
                 <div class="panel-body">
+
                     <form class="form" action="{{route('lodges.store')}}" method="post">
                         {{csrf_field()}}
                         <div class="form-group">

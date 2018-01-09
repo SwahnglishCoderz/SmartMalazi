@@ -6,6 +6,7 @@
  * Time: 20:21
  */
 ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -51,6 +52,7 @@
         <div class="col-md-12">
                 <h1 class="welcome text-center" style="line-height: 0.6;" id="logo" >
                         SmartMalazi  <i class="fa fa-home"></i></span></h1>
+
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title"> Forgot Password </h3>
@@ -80,6 +82,7 @@
                     </form>
                 </div>
             </div>
+            
             <footer class="footer" id="main-footer" >
                     <strong>Copyright &copy; 2017 <a href="#">smartMalazi</a>.</strong> All rights reserved.
                   </footer>

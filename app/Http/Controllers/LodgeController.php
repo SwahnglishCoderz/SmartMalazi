@@ -25,7 +25,9 @@ class LodgeController extends Controller
     {
         $this->validation($request);
         Lodge::create($request->all());
-        return redirect('lodges/index')->with('success','Lodge Added Successfully!!');
+
+        return redirect('/lodges')->with('success','Lodge Added Successfully!!');
+
     }
 
     public function validation($request)
@@ -66,7 +68,15 @@ class LodgeController extends Controller
 
         $lodges->save();
 
-        return redirect('lodges/index')->with('success','Lodge name Edited');
+        return redirect('/lodges')->with('success','Lodge name Edited');
+    }
+
+    public function delete($id)
+    {
+        Lodge::destroy($id);
+
+        return redirect('/lodges')->with('success','Lodge deleted successfully');
+
     }
 
 }
