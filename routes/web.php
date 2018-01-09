@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::post('/logout','LoginController@logout');
 
@@ -22,13 +19,14 @@ Route::get('/not-allowed','ErrorController@notAllowed');
 
 //visitors links
 Route::group(['middleware' => 'visitors'], function (){
-    Route::get('/login','LoginController@login');
-    Route::post('/login','LoginController@postLogin');
+    Route::get('/','LoginController@login');
+    Route::post('/','LoginController@postLogin')->name('login.visitors');
     Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
     Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
 
     Route::get('/reset/{email}/{resetCode}','ForgotPasswordController@resetPassword');
     Route::post('/reset/{email}/{resetCode}','ForgotPasswordController@postResetPassword');
+   
 });
 
 //admin links

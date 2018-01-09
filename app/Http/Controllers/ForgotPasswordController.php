@@ -96,7 +96,7 @@ class ForgotPasswordController extends Controller
             if($resetCode == $reminder->code)
             {
                 Reminder::complete($user,$resetCode, $request->password);
-                return redirect('/login')->with([
+                return redirect('/')->with([
                     'success' => 'Password Reset Successful. You can now login with your new Password.'
                 ]);
             }
