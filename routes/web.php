@@ -22,8 +22,9 @@ Route::get('/not-allowed','ErrorController@notAllowed');
 
 //visitors links
 Route::group(['middleware' => 'visitors'], function (){
-    Route::get('/login','LoginController@login');
-    Route::post('/login','LoginController@postLogin');
+
+    Route::get('/','LoginController@login');
+    Route::post('/','LoginController@postLogin')->name('login.visitors');
     Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
     Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
 
@@ -40,9 +41,10 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/lodges/create','LodgeController@create')->name('lodges.create');
     Route::post('/lodges/store','LodgeController@store')->name('lodges.store');
     Route::post('/lodges/update/{id}','LodgeController@update');
+
+    Route::get('/lodges/delete/{id}','LodgeController@delete')->name('lodges.delete');
     Route::get('/lodges/show/{id}','LodgeController@show')->name('lodges.show');
     Route::get('/lodges/edit/{id}','LodgeController@edit')->name('lodges.edit');
-    Route::get('/lodges/delete/{id}','LodgeController@delete')->name('lodges.delete');
 
     Route::get('/admin','AdminController@index')->name('admin.index');
 });

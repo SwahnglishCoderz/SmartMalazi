@@ -101,7 +101,6 @@ class MigrationCartalystSentinel extends Migration
             $table->timestamp('last_login')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->integer('level')->default(0); //1 for system admin 2 for lodge admins
             $table->integer('lodge_id');
             $table->rememberToken();
             $table->timestamps();

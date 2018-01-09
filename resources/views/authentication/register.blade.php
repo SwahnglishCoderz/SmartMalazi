@@ -11,7 +11,17 @@
 
 @section('content')
         <div class="row">
-            <div class="col-md-12">
+                <div class="col-md-4">
+
+                        <ul class="pager" style="margin-top:-3%;margin-bottom:1%;">
+                                <li class="previous" ><a href="/admin"><span aria-hidden="true">&larr;</span>Back</a>
+                                </li>
+                            </ul>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                   
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"> Register Lodge Admin</h3>
@@ -25,7 +35,9 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 
-                                    <input type="email" name="email" class="form-control" placeholder="example@server.com">
+
+                                    <input type="email" name="email" class="form-control" placeholder="example@server.com" required>
+
                                 </div>
                             </div>
 
@@ -33,7 +45,9 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                                    <input type="text" name="first_name" class="form-control" placeholder="First Name">
+
+                                    <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+
                                 </div>
                             </div>
 
@@ -41,7 +55,9 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
 
-                                    <input type="text" name="last_name" class="form-control" placeholder="Last Name">
+
+                                    <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+
                                 </div>
                             </div>
 
@@ -49,7 +65,8 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                    <input type="password" name="password" class="form-control" placeholder="Password">
+                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+
                                 </div>
                             </div>
 
@@ -57,19 +74,7 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 
-                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-level-up"></i></span>
-
-                                    <select  class="form-control" name="level">
-                                        <option >--Select level--</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                    </select>
+                                    <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password" required>
                                 </div>
                             </div>
 
@@ -77,7 +82,8 @@
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-bed"></i></span>
 
-                                    <select  class="form-control" name="lodge_id">
+                                    <select  class="form-control" name="lodge_id" required>
+
                                         <option >--Select lodge--</option>
                                         <option value="1">whitehouse</option>
                                         <option value="2">Melisa</option>

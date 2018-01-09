@@ -11,12 +11,13 @@
     </div>
 
     <div class="row">
-        <div class="col-md-12">
-            <div class="box box-primary">
-                <div class="box-header">
-                    <h3 class="title" align="center">Lodge Registration</h3>
+        <div class="col-md-offset-4 col-md-4">
+                <div class="panel panel-primary">
+                        <div class="panel-heading">
+                    <h3 class="panel-title" align="center">Lodge Registration</h3>
                 </div>
-                <div class="box-body">
+                <div class="panel-body">
+
                     <form class="form" action="{{route('lodges.store')}}" method="post">
                         {{csrf_field()}}
                         <div class="form-group">

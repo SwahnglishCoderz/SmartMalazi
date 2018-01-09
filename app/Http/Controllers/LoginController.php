@@ -63,6 +63,6 @@ class LoginController extends Controller
     {
         Sentinel::logout();
 
-        return redirect('/login')->with(['success','You have logout successfully.']);
+        return redirect('/')->with(['success','You have logout successfully.']);
     }
 }
