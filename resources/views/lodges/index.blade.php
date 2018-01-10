@@ -22,11 +22,12 @@
     <div class="col-md-12">
 
             <div class="box-header with-border">
+                    @if(count($lodges)>=1)
                     <h3 class="box-title">Lodges</h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-            
+                   
                     <table class="table table-bordered">
                         <tr>
                             
@@ -36,7 +37,7 @@
                             <th style="width: 60px">Delete</th>
             
                         </tr>
-                        @if(count($lodges)>=1)
+                       
                             @foreach($lodges as $lodge)
                                 <div class="box">
             
@@ -55,14 +56,14 @@
                 </div>
                 <!-- /.box-body -->
             
-                        {{$lodges->links()}}
-                        @else
-                            <p>
-                                <h1>No Lodges Found!!</h1>
-                            </p>
-                        @endif
+                       
             </div>
-
+            {{$lodges->links()}}
+            @else
+                <p>
+                    <h1>No Lodges Found!!</h1>
+                </p>
+            @endif
     </div>
 @endsection
 

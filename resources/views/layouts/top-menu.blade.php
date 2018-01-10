@@ -22,11 +22,4 @@
         </ul>
     </nav>
     
-    <h3 class="text-muted">
-    @if(Sentinel::check())
-        Hello, {{ Sentinel::getUser()->first_name }}
-    @else
-        Smart Malazi
-    @endif
-    </h3>
-</header>
+   

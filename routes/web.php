@@ -43,6 +43,8 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/lodges/edit/{id}','LodgeController@edit')->name('lodges.edit');
 
     Route::get('/admin','AdminController@index')->name('admin.index');
+    Route::post('/rooms/store','RoomController@store')->name('rooms.addrooms');
+    Route::get('/rooms/addrooms/{id}','RoomController@create');
 });
 
 //lodge admin links

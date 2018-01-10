@@ -18,7 +18,7 @@ class Lodge extends Model
      * @var array
      */
     protected $fillable = [
-        'lodge_name', 'disable_enable',
+        'lodge_name','lodge_status','disable_enable',
     ];
 
 }

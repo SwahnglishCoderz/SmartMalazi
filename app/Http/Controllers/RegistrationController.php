@@ -6,16 +6,13 @@ use Illuminate\Http\Request;
 use Sentinel;
 use Activation;
 use App\User;
-use App\Lodge;
 use Mail;
 
 class RegistrationController extends Controller
 {
     public function register()
     {
-        $lodges = Lodge::all();
-        return view('authentication.register')
-            ->with('lodges',$lodges);
+        return view('authentication.register');
     }
 
     public function postRegister(Request $request)

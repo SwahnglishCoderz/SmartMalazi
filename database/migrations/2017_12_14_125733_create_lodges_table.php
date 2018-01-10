@@ -16,6 +16,7 @@ class CreateLodgesTable extends Migration
         Schema::create('lodges', function (Blueprint $table) {
             $table->increments('lodge_id');
             $table->string('lodge_name');
+            $table->string('lodge_status')->nullable(); //full or available
             $table->integer('disable_enable'); //used to 0 disable or 1 enable lodge.
             $table->timestamps();
         });

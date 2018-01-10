@@ -85,9 +85,8 @@
                                     <select  class="form-control" name="lodge_id" required>
 
                                         <option >--Select lodge--</option>
-                                        @foreach($lodges as $lodge)
-                                            <option value="{{$lodge->id}}">{{$lodge->lodge_name}}</option>
-                                        @endforeach
+                                        <option value="1">whitehouse</option>
+                                        <option value="2">Melisa</option>
                                     </select>
                                 </div>
                             </div>
