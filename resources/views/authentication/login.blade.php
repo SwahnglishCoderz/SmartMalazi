@@ -50,17 +50,7 @@
                     <form id="login-form" action="{{route('login.visitors')}}" method="POST">
                         {{ csrf_field() }}
 
-                        @if(session('error'))
-                            <div class="alert alert-danger">
-                                {{ session('error') }}
-                            </div>
-                        @endif
-
-                        @if(session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
+                        @include('messages.messages')
 
                         <div class="form-group">
                             <div class="input-group">

@@ -5,18 +5,11 @@
     </div>
     <div class="row">
 
-        <div class="col-md-offset-4 col-md-3">
-            <div class="links">
-                <h3><a href="/register">Register Lodge Admin</a></h3>
-               
-            </div>
+        <div>
+            <p>
+                Welcome Admin. You are the main controller of everything here.
+            </p>
         </div>
-        <div class="col-md-4">
-                <div class="links">
-                    
-                  <h3>  <a href="/lodges">Lodges</a></h3>
-                </div>
-            </div>
 
     </div>
 @endsection

@@ -62,11 +62,7 @@
                     <form action="/forgot-password" method="POST">
                         {{ csrf_field() }}
 
-                        @if(session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
+                        @include('messages.messages')
 
                         <div class="form-group">
                             <div class="input-group">

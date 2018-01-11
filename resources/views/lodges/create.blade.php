@@ -4,7 +4,7 @@
         <div class="col-md-1">
             <ul class="pager" style="margin-top:-3%;margin-bottom:1%;">
                 <li class="previous" >
-                    <a href="{{route('lodges.index')}}"><span aria-hidden="true">&larr;</span>Back</a>
+                    <a href="{{ url()->previous() }}"><span aria-hidden="true">&larr;</span>Back</a>
                 </li>
             </ul>
         </div>

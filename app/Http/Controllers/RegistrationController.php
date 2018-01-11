@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Sentinel;
 use Activation;
-use App\User;
+use App\Lodge;
 use Mail;
 
 class RegistrationController extends Controller
 {
     public function register()
     {
-        return view('authentication.register');
+        $lodges=Lodge::all();
+        return view('authentication.register')
+            ->with('lodges',$lodges);
     }
 
     public function postRegister(Request $request)

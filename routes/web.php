@@ -30,6 +30,8 @@ Route::group(['middleware' => 'visitors'], function (){
 
 //admin links
 Route::group(['middleware' => 'admin'], function (){
+    Route::get('/admin','AdminController@index')->name('admin.index');
+
     Route::get('/register','RegistrationController@register');
     Route::post('/register','RegistrationController@postRegister');
 
@@ -37,14 +39,18 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/lodges/create','LodgeController@create')->name('lodges.create');
     Route::post('/lodges/store','LodgeController@store')->name('lodges.store');
     Route::post('/lodges/update/{id}','LodgeController@update');
-
     Route::get('/lodges/delete/{id}','LodgeController@delete')->name('lodges.delete');
     Route::get('/lodges/show/{id}','LodgeController@show')->name('lodges.show');
     Route::get('/lodges/edit/{id}','LodgeController@edit')->name('lodges.edit');
 
-    Route::get('/admin','AdminController@index')->name('admin.index');
-    Route::post('/rooms/store','RoomController@store')->name('rooms.addrooms');
-    Route::get('/rooms/addrooms/{id}','RoomController@create');
+    Route::get('/rooms/{lodge_id}','RoomController@index')->name('rooms.index');
+    Route::post('/rooms/store','RoomController@store')->name('rooms.store');
+    Route::get('/rooms/create/{lodge_id}','RoomController@create')->name('rooms.create');
+    Route::post('/rooms/update/{lodge_id}/{room_id}','RoomController@update');
+    Route::get('/rooms/delete/{lodge_id}/{room_id}','RoomController@delete')->name('rooms.delete');
+    Route::get('/rooms/edit/{lodge_id}/{room_id}','RoomController@edit')->name('rooms.edit');
+
+    Route::get('/gallery/{room_id}','GalleryController@index')->name('gallery.index');
 });
 
 //lodge admin links

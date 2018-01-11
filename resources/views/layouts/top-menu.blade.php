@@ -1,9 +1,20 @@
     <nav class="navbar navbar-static-top" id="bar">
              <a class="navbar-brand" id="brand" href="#">SmartMalazi</a>
+        <ul class="nav nav-pills pull-left">
+            @if(Sentinel::check())
+                <li class="links">
+                    <a href="/register">Register Lodge Admin</a>
+                </li>
+                <li class="links">
+                    <a href="/lodges">Lodges</a>
+                </li>
+            @endif
+        </ul>
+
         <ul class="nav nav-pills pull-right">
             @if(Sentinel::check())
 
-            <li class="hello">Hello, {{ Sentinel::getUser()->first_name }}
+                <li class="hello">Hello, {{ Sentinel::getUser()->first_name }}
                 </li>
             
                 <li class="log">
@@ -14,11 +25,7 @@
                     </form>
 
                 </li>
-        
             @endif
-
-
-
         </ul>
     </nav>
     
