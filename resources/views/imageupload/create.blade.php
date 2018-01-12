@@ -21,9 +21,9 @@
                             <select  class="form-control" name="room_id" required>
 
                                 <option>--Select Room--</option>
-                                
-                                    <option value="{{$rooms->room_id}}">{{$rooms->room_name}}</option>
-                           
+                                @foreach($rooms as $room)
+                                    <option value="{{$room->room_id}}">{{$room->room_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -33,7 +33,8 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-bed"></i></span>
 
-                            <input type="text" name="lodge_id" value="{{$rooms->lodge_id}}"  required>
+                            <!-- added an array index since no loop is needed to get the lodge id -->
+                            <input type="text" name="lodge_id" value="{{$rooms[0]->lodge_id}}"  required>
 
                         </div>
                     </div>
