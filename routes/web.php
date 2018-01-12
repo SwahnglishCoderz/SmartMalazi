@@ -49,8 +49,8 @@ Route::group(['middleware' => 'admin'], function (){
     Route::post('/rooms/update/{lodge_id}/{room_id}','RoomController@update');
     Route::get('/rooms/delete/{lodge_id}/{room_id}','RoomController@delete')->name('rooms.delete');
     Route::get('/rooms/edit/{lodge_id}/{room_id}','RoomController@edit')->name('rooms.edit');
-
-    Route::get('/gallery/{room_id}','GalleryController@index')->name('gallery.index');
+    Route::get('/imageupload/create/{lodge_id}','CreateAlbumController@create')->name('imageupload.create');
+    Route::get('/imageupload/store','CreateAlbumController@store')->name('image.store');
 });
 
 //lodge admin links

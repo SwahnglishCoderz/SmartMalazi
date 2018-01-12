@@ -21,7 +21,7 @@
                        
             </div>
             <div class="col-md-4">
-                    <a href="">Create Room Album</a>
+                    <a href="/imageupload/create/{{$lodges->lodge_id}}">Create Room Album</a>
                    
         
         </div>
