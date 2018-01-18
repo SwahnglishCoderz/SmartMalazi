@@ -48,9 +48,9 @@
                                 <td ><a href="/rooms/show/{{$lodges->lodge_id}}/{{$room->room_id}}">{{$room->room_name}}</a></td>
                                 <td >{{$room->price}}</td>
                                 <td style="width: 60px"><a href="/rooms/edit/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-primary">Edit</a></td>
-                                <td style="width: 60px"><a href="/gallery/{{$room->room_id}}" class="btn btn-primary">Gallery</a></td>
+                                <td style="width: 60px"><a href="/album/index/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-primary">Gallery</a></td>
                                 <td style="width: 60px"><a href="" class="btn btn-success">{{$room->room_status}}</a></td>
-                                <td style="width: 60px"><a href="/rooms/delete/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete the lodge?') ">Delete</a></td>
+                                <td style="width: 60px"><a href="/rooms/delete/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete room {{$room->room_name}}?') ">Delete</a></td>
 
                             </tr>
                         </div>

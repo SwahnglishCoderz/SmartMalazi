@@ -12,7 +12,7 @@ class LodgeController extends Controller
     public function index()
     {
         //$lodges = Lodge::where('user_id',Auth::user()->id)->get();
-        $lodges=Lodge::orderBy('created_at','desc')->paginate(2);
+        $lodges=Lodge::orderBy('created_at','desc')->paginate(4);
         return view('lodges.index')->with('lodges',$lodges);
     }
 

@@ -10,7 +10,7 @@ class RoomController extends Controller
 {
     public function index($lodge_id)
     {
-        $rooms=RoomDetail::paginate(2);
+        $rooms=RoomDetail::orderBy('room_id','desc')->paginate(4);
 
         $lodges=Lodge::find($lodge_id);
 
