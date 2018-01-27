@@ -27,8 +27,11 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-
-                <table class="table table-bordered" style="color:#F8F8F6">
+                    <div class="form-group pull-right">
+                            <input type="text" class="search form-control" placeholder="Search">
+                        </div>
+                <table class="table table-bordered" id="view_rooms"style="color:#F8F8F6">
+                    <thead>
                     <tr>
 
                         <th>Room</th>
@@ -39,7 +42,8 @@
                         <th style="width: 60px">Delete</th>
 
                     </tr>
-
+                </thead>
+                <tbody>
                     @foreach($rooms as $room)
                         <div class="box">
 
@@ -61,6 +65,7 @@
                             </tr>
                         </div>
                     @endforeach
+                    </tbody>
                 </table>
 
             </div>
@@ -80,5 +85,22 @@
        
         @endif
     </div>
+
+
+    <script>
+            $(document).ready(function(){
+                $('.search').on('keyup',function(){
+                    var searchTerm = $(this).val().toLowerCase();
+                    $('#view_rooms tbody tr').each(function(){
+                        var lineStr = $(this).text().toLowerCase();
+                        if(lineStr.indexOf(searchTerm) === -1){
+                            $(this).hide();
+                        }else{
+                            $(this).show();
+                        }
+                    });
+                });
+            });
+            </script>
 @endsection
 
