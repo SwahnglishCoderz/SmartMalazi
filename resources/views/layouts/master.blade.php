@@ -26,6 +26,7 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                background: transparent url("/images/y.jpg");
             }
             .logout{
                 color:#F5F5F5;
@@ -34,14 +35,19 @@
             }
     #brand{
         color:#F5F5F5;
+        margin-top:2px;
     }
             #bar{
-                background-color: #202224;
+                background-color: #315B69;
             }
-    .hello{
+    #hello{
         margin-right:25px;
         color:#F5F5F5;
+        margin-top:14px;
         margin-top:16px;
+    }
+    #admin_menu{
+        margin-top:6px;
     }
     .log{
         margin-top:14px;
@@ -49,7 +55,7 @@
     .main-footer {
         height: 30px;
         color:#F5F5F5;
-        background-color: #222222;
+        background-color: #315B69;
         margin-left: -20px;
         margin-right: -20px;
         padding-left: 20px;
@@ -78,8 +84,18 @@
               padding: 5px 8px;
       
           }
-      
-          
+      #sm{
+          color:#5CB85C;
+      }
+      #view_lodges{
+          color:#F8F8F6;
+      }
+      #form{
+        background:#414C5F;
+      }
+      #admin_menu:hover {
+        background-color: #315B69;
+     }
         </style>
 </head>
 

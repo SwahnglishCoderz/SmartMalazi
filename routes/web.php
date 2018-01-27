@@ -30,7 +30,7 @@ Route::group(['middleware' => 'visitors'], function (){
 
 //admin links
 Route::group(['middleware' => 'admin'], function (){
-    Route::get('/admin','AdminController@index')->name('admin.index');
+    //Route::get('/admin','AdminController@index')->name('admin.index');
 
     Route::get('/register','RegistrationController@register');
     Route::post('/register','RegistrationController@postRegister');

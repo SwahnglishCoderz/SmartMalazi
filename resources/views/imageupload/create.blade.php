@@ -13,7 +13,7 @@
             <div class="col-md-7"  style="margin-top:-2%;margin-bottom:1%;">
                 <div class="row">
                     <div class="col-md-offset-2 col-md-4">
-                        <h3>{{$lodges->lodge_name}}  </h3>
+                        <h3 style="color:#F8F8F6">{{$lodges->lodge_name}}  </h3>
                     </div>
     
                 </div>
@@ -23,9 +23,9 @@
 <div class="row">
     <div class="col-md-offset-4 col-md-4">
 
-        <div class="panel panel-primary">
+        <div class="panel" id="form">
             <div class="panel-heading">
-                <h3 class="panel-title"> Add room Picture</h3>
+                <h3 class="panel-title" style="color:#F8F8F6"> Add room Picture</h3>
             </div>
 
             <div class="panel-body">

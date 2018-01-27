@@ -12,9 +12,9 @@
 
     <div class="row">
         <div class="col-md-offset-4 col-md-4">
-                <div class="panel panel-primary">
+                <div class="panel" id="form">
                         <div class="panel-heading">
-                    <h3 class="panel-title" align="center">Lodge Registration</h3>
+                    <h3 class="panel-title" align="center" style="color:#F8F8F6">Lodge Registration</h3>
                 </div>
                 <div class="panel-body">
                                                                     

@@ -14,7 +14,7 @@
                 <div class="col-md-4">
 
                         <ul class="pager" style="margin-top:-3%;margin-bottom:1%;">
-                                <li class="previous" ><a href="/admin"><span aria-hidden="true">&larr;</span>Back</a>
+                                <li class="previous" ><a href="/lodges"><span aria-hidden="true">&larr;</span>Back</a>
                                 </li>
                             </ul>
                 </div>
@@ -22,15 +22,15 @@
             <div class="row">
             <div class="col-md-offset-4 col-md-4">
                    
-                <div class="panel panel-primary">
+                <div class="panel" id="form">
                     <div class="panel-heading">
-                        <h3 class="panel-title"> Register Lodge Admin</h3>
+                        <h3 class="panel-title" style="color:#F8F8F6"> Register Lodge Admin</h3>
                     </div>
 
                     <div class="panel-body">
                         <form action="/register" method="POST">
                             {{ csrf_field() }}
-
+                         @include('messages.messages')
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>

@@ -29,7 +29,7 @@ class LoginController extends Controller
                 $slug = Sentinel::getUser()->roles()->first()->slug;
                 if($slug == 'admin')
                 {
-                    return redirect('/admin');
+                    return redirect('/lodges');
                 }
                 else if($slug == 'lodge-admin')
                 {

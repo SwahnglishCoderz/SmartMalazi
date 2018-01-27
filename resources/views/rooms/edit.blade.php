@@ -12,8 +12,8 @@
     <div class="row">
 
         <div class="col-md-offset-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Edit Lodge Name</div>
+            <div class="panel" id="form">
+                <div class="panel-heading" style="color:#F8F8F6">Edit Lodge Name</div>
                 <div class="panel-body">
                     <form action="/rooms/update/{{$lodges->lodge_id}}/{{$rooms->room_id}}" method="POST">
                         {{ csrf_field() }}

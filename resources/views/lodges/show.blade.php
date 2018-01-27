@@ -13,15 +13,15 @@
             <div class="links pull-right">
                 <div class="row"> 
                     <div class="col-md-4">
-                            <a href="/rooms/create/{{$lodges->lodge_id}}">Add Room</a>
+                            <a href="/rooms/create/{{$lodges->lodge_id}}" style="color:#F8F8F6">Add Room</a>
                            
                 </div>
                 <div class="col-md-4">
-                    <a href="/rooms/{{$lodges->lodge_id}}">View Rooms</a>
+                    <a href="/rooms/{{$lodges->lodge_id}}" style="color:#F8F8F6">View Rooms</a>
                        
             </div>
             <div class="col-md-4">
-                    <a href="/imageupload/create/{{$lodges->lodge_id}}">Create Room Album</a>
+                    <a href="/imageupload/create/{{$lodges->lodge_id}}" style="color:#F8F8F6">Create Room Album</a>
                    
         
         </div>
@@ -32,11 +32,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-striped table-bordered">
+            <table class="table table-striped table-bordered" >
                 <tr>
-                    <th colspan="2" style="text-align:center">Lodge Details</th>
+                    <th colspan="2" style="text-align:center" >Lodge Details</th>
                 </tr>
-                <tr><th>Lodge Name</th><td>{{$lodges->lodge_name}}</td></tr>
+                <tr style="color:#F8F8F6"><th>Lodge Name</th><td>{{$lodges->lodge_name}}</td></tr>
                 <tr><th>Date of Registration</th><td>{{$lodges->created_at}}</td></tr>
             </table>
         </div>

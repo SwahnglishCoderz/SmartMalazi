@@ -14,7 +14,7 @@
                 <div class="col-md-7"  style="margin-top:-2%;margin-bottom:1%;">
                     <div class="row">
                         <div class="col-md-offset-2 col-md-4">
-                            <h3>{{$lodges->lodge_name}}  </h3>
+                            <h3 style="color:#F8F8F6">{{$lodges->lodge_name}}  </h3>
                         </div>
         
                     </div>
@@ -27,10 +27,15 @@
                 <div class="col-md-offset-4 col-md-7"  style="margin-top:-2%;margin-bottom:1%;">
                     <div class="row">
                         <div class="col-md-offset-2 col-md-4">
-                            <h3>Room {{$rooms->room_name}} Pictures </h3>
+                            <h3 style="color:#F8F8F6">Room {{$rooms->room_name}} Pictures </h3>
                         </div>
         
                     </div>
+
+</div>
+<div class="col-md-1">
+    <a href="/imageupload/create/{{$lodges->lodge_id}}" style="color:#F8F8F6">Add Picture</a>
+   
 
 </div>
 </div>
@@ -78,7 +83,10 @@
                 </div> <!-- col-6 / end -->
 
                 @endforeach
-
+                @else
+                <div class="alert alert-info">
+                    <strong>Info!</strong>Sorry No Pictures Present At the Moment.
+                  </div>
             @endif
 
 
