@@ -6,7 +6,7 @@
     <div class="col-md-4">
         
                     <ul class="pager" style="margin-top:-3%;margin-bottom:1%;">
-                        <li class="previous" ><a href="{{ url()->previous() }}"><span aria-hidden="true">&larr;</span>Back</a>
+                        <li class="previous" ><a href="#" onclick="history.go(-1)"><span aria-hidden="true">&larr;</span>Back</a>
                         </li>
                     </ul>
                 </div>

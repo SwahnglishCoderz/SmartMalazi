@@ -42,7 +42,7 @@ public function validation($request)
 {
     return $this->validate($request,[
         'picture_caption' =>'required|max:190',
-        'room_picture' =>'required|max:190',
+        'room_picture' =>'required',
         
     ]);
 }

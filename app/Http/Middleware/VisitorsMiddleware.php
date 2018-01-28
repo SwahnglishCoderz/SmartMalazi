@@ -21,7 +21,7 @@ class VisitorsMiddleware
         {
             if(Sentinel::getUser()->roles()->first()->slug == 'admin')
             {
-                return redirect('/admin');
+                return redirect('/lodges');
             }
             else if(Sentinel::getUser()->roles()->first()->slug == 'lodge-admin')
             {

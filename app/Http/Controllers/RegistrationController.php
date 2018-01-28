@@ -20,6 +20,7 @@ class RegistrationController extends Controller
     public function postRegister(Request $request)
     {
         $this->validation($request);
+
         //$user = Sentinel::registerAndActivate($request->all());
         $user = Sentinel::register($request->all());
 
@@ -54,8 +55,6 @@ class RegistrationController extends Controller
             'first_name' => 'required|min:3|max:50',
             'last_name' => 'required|min:3|max:50',
             'password' => 'required|confirmed|min:6',
-            
-            
         ]);
     }
 }

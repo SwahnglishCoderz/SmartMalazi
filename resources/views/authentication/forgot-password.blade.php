@@ -57,7 +57,7 @@
     <div class="row">
         <div class="col-md-12">
                 <h1 class="welcome text-center" style="line-height: 0.6;" id="logo" >
-                        SmartMalazi  <i class="fa fa-home"></i></span></h1>
+                        SmartMalazi  <span><i class="fa fa-home"></i></span></h1>
 
             <div class="panel" id="b">
                 <div class="panel-heading">
