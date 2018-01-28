@@ -8,18 +8,24 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/narrow-jumbotron.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <style>
         html, body {
-            background-color: #222222;
+           
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
             height: 100vh;
             margin: 0;
+           
+         background: transparent url("/images/p.jpg");
+         
         }
 #main-footer{
-    color:#ABABAB;
+    color:#FFF;
 }
 #logo{
     color:#EAE9E4;
@@ -27,6 +33,20 @@
 #panel{
     color:#EAE9E4;
 }
+
+#sm{
+    color:#002266;
+}
+#b{
+    background:#414C5F;
+}
+#l{
+    color:#FFF;
+}
+#r{
+    color:#FFF;
+}
+  
     </style>
 
 
@@ -34,19 +54,21 @@
 
 
 </head>
+<body>
 <div class="container">
+      
     <div class="row">
         <div class="col-md-12">
                         <h1 class="welcome text-center" style="line-height: 0.6;" id="logo">
                            SmartMalazi  <small id="panel"> admin panel</small><i class="fa fa-home"></i></span></h1>
 
 
-            <div class="panel panel-primary">
+            <div class="panel" id="b">
                 <div class="panel-heading">
-                    <h3 class="panel-title"> Login </h3>
+                    <h3 class="panel-title" id="l"> Login </h3>
                 </div>
 
-                <div class="panel-body">
+                <div class="panel-body" >
                     <form id="login-form" action="{{route('login.visitors')}}" method="POST">
                         {{ csrf_field() }}
 
@@ -69,8 +91,8 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="input-group">
-                                <input type="checkbox" name="remember_me" placeholder="Password"> Remember Me
+                            <div class="input-group" id="r">
+                                <input type="checkbox" name="remember_me" placeholder="Password" > Remember Me
                             </div>
                         </div>
 
@@ -83,12 +105,15 @@
                 </div>
             </div>
             <footer class="footer" id="main-footer">
-                    <strong>Copyright &copy; 2017 <a href="#">smartMalazi</a>.</strong> All rights reserved.
+                    <strong>Copyright &copy; 2017 <a href="#" id="sm">smartMalazi</a>.</strong> All rights reserved.
                   </footer>
 
         </div>
     </div>
 </div>
+
+    
+</body>
 
 
 

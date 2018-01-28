@@ -25,6 +25,7 @@
             font-weight: 100;
             height: 100vh;
             margin: 0;
+            background: transparent url("/images/p.jpg");
         }
 
         #main-footer{
@@ -34,7 +35,9 @@
             color:#EAE9E4;
         }
        
-
+        #b{
+            background:#414C5F;
+        }
 
     </style>
 
@@ -45,7 +48,7 @@
                 <div class="col-md-12">
                         <h1 class="welcome text-center" style="line-height: 0.6;" id="logo">
                                 SmartMalazi  <i class="fa fa-home"></i></span></h1>
-                    <div class="panel panel-primary">
+                    <div class="panel" id="b">
                         <div class="panel-heading">
                             <h3 class="panel-title"> Change your Password </h3>
                         </div>

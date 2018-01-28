@@ -19,6 +19,8 @@ class RegistrationController extends Controller
 
     public function postRegister(Request $request)
     {
+        $this->validation($request);
+
         //$user = Sentinel::registerAndActivate($request->all());
         $user = Sentinel::register($request->all());
 
@@ -33,7 +35,7 @@ class RegistrationController extends Controller
         //dd($request->all());
         //dd($user);
 
-        return redirect('/login')->with(['success','Check your email for the activation code to activate your account.']);
+        return redirect('/register')->with('success','Lodge Administrator Added Successfully.');
     }
 
     private function sendEmail($user,$code)
@@ -45,5 +47,14 @@ class RegistrationController extends Controller
             $message->to($user->email);
             $message->subject("Hello $user->first_name, activate your SmartMalazi Account.");
         });
+    }
+    public function validation($request)
+    {
+        return $this->validate($request,[
+            'email' => 'email',
+            'first_name' => 'required|min:3|max:50',
+            'last_name' => 'required|min:3|max:50',
+            'password' => 'required|confirmed|min:6',
+        ]);
     }
 }

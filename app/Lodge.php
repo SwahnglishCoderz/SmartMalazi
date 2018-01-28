@@ -20,5 +20,8 @@ class Lodge extends Model
     protected $fillable = [
         'lodge_name','lodge_status','disable_enable',
     ];
-
+    public function rooms(){
+        
+                return $this->hasMany('App\RoomDetail');
+            }
 }

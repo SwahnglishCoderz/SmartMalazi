@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-5">
             <ul class="pager" style="margin-top:-3%;margin-bottom:1%;">
-                <li class="previous" ><a href="{{ url()->previous() }}"><span aria-hidden="true">&larr;</span>Back</a>
+                <li class="previous" ><a href="#" onclick="history.go(-1)"><span aria-hidden="true">&larr;</span>Back</a>
                 </li>
             </ul>
         </div>
@@ -12,8 +12,8 @@
     <div class="row">
 
         <div class="col-md-offset-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">Edit Lodge Name</div>
+            <div class="panel" id="form">
+                <div class="panel-heading" style="color:#F8F8F6">Edit Lodge Name</div>
                 <div class="panel-body">
                     <form action="/rooms/update/{{$lodges->lodge_id}}/{{$rooms->room_id}}" method="POST">
                         {{ csrf_field() }}

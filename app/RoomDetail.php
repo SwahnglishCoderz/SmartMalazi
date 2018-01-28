@@ -18,4 +18,8 @@ class RoomDetail extends Model
     protected $fillable = [
         'lodge_id', 'room_name','price','room_status',
     ];
+    public function gallery(){
+        
+                return $this->hasMany('App\RoomGallery');
+            }
 }

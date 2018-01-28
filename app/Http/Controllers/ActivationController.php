@@ -17,11 +17,11 @@ class ActivationController extends Controller
 
         if(Activation::complete($user, $activationCode))
         {
-            return redirect('/login')->with('success','Your account has been activated. You can now login.');
+            return redirect('/')->with('success','Your account has been activated. You can now login.');
         }
         else
         {
-            return redirect('/login')->with('error','Account activation failed. Please contact administrator');
+            return redirect('/')->with('error','Account activation failed. Please contact administrator');
         }
     }
 }
