@@ -20,7 +20,7 @@
                         <input type="hidden" name="method" value="PUT"/>
                         <div class="form-group">
                             <input type="hidden" value="0" name="disable_enable" />
-                            <input type="text" class="form-control" value="{{$lodges->lodge_name}}" name="lodge_name" placeholder="Lodge Name">
+                            <input type="text" class="form-control" value="{{$lodges->lodge_name}}" required name="lodge_name" placeholder="Lodge Name">
                         </div>
                         
                         <div class="form-group">

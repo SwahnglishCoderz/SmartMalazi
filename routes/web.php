@@ -51,6 +51,7 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/rooms/edit/{lodge_id}/{room_id}','RoomController@edit')->name('rooms.edit');
     Route::get('/imageupload/create/{lodge_id}','CreateAlbumController@create')->name('imageupload.create');
     Route::post('/imageupload/store','CreateAlbumController@store');
+    Route::post('/imageupload/modal','AddPictureModelController@store');
     Route::get('/album/index/{lodge_id}/{room_id}','ViewAlbumController@index')->name('album.index');
     
     Route::delete('imagedelete/{id}', 'ViewAlbumController@delete');
