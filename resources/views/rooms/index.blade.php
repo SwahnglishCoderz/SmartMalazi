@@ -51,7 +51,7 @@
 
                                 <td ><a href="/rooms/show/{{$lodges->lodge_id}}/{{$room->room_id}}" style="color:#F8F8F6">{{$room->room_name}}</a></td>
                                 <td style="color:#F8F8F6">{{$room->price}}</td>
-                                <td style="width: 60px"><a href="/rooms/edit/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-primary">Edit</a></td>
+                                <td style="width: 60px"><a href="#" data-toggle="modal" style="color:#F8F8F6"data-target="#myModal{{$room->room_id}}" class="btn btn-primary">Edit</a></td>
                                 <td style="width: 60px"><a href="/album/index/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-primary">Gallery</a></td>
                                 <td style="width: 60px">
                                     @if($room->room_status=="Not Occupied")
@@ -63,6 +63,23 @@
                                 <td style="width: 60px"><a href="/rooms/delete/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete room {{$room->room_name}}?') ">Delete</a></td>
 
                             </tr>
+                        </div>
+                        <div id="myModal{{$room->room_id}}" class="modal fade" role="dialog">
+                            <div class="modal-dialog" >
+
+                                <!-- Modal content-->
+                                <div class="modal-content" id="modal">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" style="color:#FFF"data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title"style="color:#F8F8F6">Edit Room</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        @include('rooms.edit',[$lodges,$room])
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
                     @endforeach
                     </tbody>

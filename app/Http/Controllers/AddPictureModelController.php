@@ -36,8 +36,7 @@ public function store(Request $request){
 
    $photo->save();
    return back()
-   
-               ->with('success','Image Added successfully.');	
+       ->with('success','Image Added successfully.');
 }
 
 public function validation($request)
