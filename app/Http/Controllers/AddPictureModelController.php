@@ -7,7 +7,7 @@ use App\Lodge;
 use App\RoomDetail;
 use App\RoomGallery;
 use Image;
-class CreateAlbumController extends Controller
+class AddPictureModelController extends Controller
 {
     //
     public function create($lodge_id)
@@ -35,7 +35,9 @@ public function store(Request $request){
 }
 
    $photo->save();
-  return redirect('/imageupload/create/'.$request->lodge_id)->with('success','Room Picture Successfully Added!!');
+   return back()
+   
+               ->with('success','Image Added successfully.');	
 }
 
 public function validation($request)

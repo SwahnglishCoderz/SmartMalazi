@@ -32,7 +32,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-bed"></i></span>
 
-                                <input type="text" name="room_name" class="form-control" value="{{$rooms->room_id}}" placeholder="Room Name" required>
+                                <input type="text" name="room_name" class="form-control" value="{{$rooms->room_name}}" placeholder="Room Name" required>
 
                             </div>
                         </div>

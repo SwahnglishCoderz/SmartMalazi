@@ -5,14 +5,15 @@
 
             <ul class="pager" style="margin-top:-3%;margin-bottom:1%;">
 
-                <li class="previous" ><a href="#" onclick="history.go(-1)"><span aria-hidden="true">&larr;</span>Back</a>
+                <li class="previous" ><a href="/register"><span aria-hidden="true">&larr;</span>Back</a>
 
                 </li>
             </ul>
         </div>
 
         <div class="links pull-right">
-            <a href="{{ route('lodges.create') }}" style="color:#F8F8F6">Add Lodge</a>
+           <!-- <a href="{{ route('lodges.create') }}" style="color:#F8F8F6">Add Lodge</a>-->
+           <a type="button" href="#" data-toggle="modal" style="color:#F8F8F6"data-target="#myModal">Add Lodge</a>
         </div>
 
 
@@ -75,6 +76,37 @@
             @endif
     </div>
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+      
+          <!-- Modal content-->
+          <div class="modal-content" id="modal">
+            <div class="modal-header">
+              <button type="button" class="close" style="color:#FFF"data-dismiss="modal">&times;</button>
+              <h4 class="modal-title"style="color:#F8F8F6">Add Lodge</h4>
+            </div>
+            <div class="modal-body">
+                    <form class="form" action="{{route('lodges.store')}}" method="post">
+                            {{csrf_field()}}
+                            <div class="form-group">
+                                <input type="hidden" value="0" name="disable_enable" />
+                                <input type="text" class="form-control" value="{{old('lodge_name')}}"name="lodge_name" required placeholder="Lodge Name">
+                            </div>
+                            <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+                                    <input type="submit" value="Add Lodge" class="btn btn-success pull-right">
+                             </div>
+                        </form>
+            </div>
+            
+          </div>
+      
+        </div>
+      </div>
+
+
+
     <script>
             $(document).ready(function(){
                 $('.search').on('keyup',function(){
@@ -90,5 +122,6 @@
                 });
             });
             </script>
+
 @endsection
 

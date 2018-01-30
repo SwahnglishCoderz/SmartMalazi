@@ -7,6 +7,9 @@
 
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
@@ -96,7 +99,13 @@
       }
       #admin_menu:hover {
         background-color: #315B69;
-     }
+     } 
+     #modal{
+        background:#414C5F;
+        width: 450px;
+        margin: auto;
+      }
+     
         </style>
 </head>
 

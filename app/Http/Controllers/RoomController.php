@@ -30,7 +30,7 @@ class RoomController extends Controller
         $this->validation($request);
         RoomDetail::create($request->all());
         //return redirect('rooms.addrooms')->with('success','Lodge Added Successfully!!');
-        return redirect('/rooms/create/'.$request->lodge_id)->with('success','Room Added Successfully!!');
+        return redirect('/lodges/show/'.$request->lodge_id)->with('success','Room Added Successfully!!');
     }
 
     public function validation($request)
