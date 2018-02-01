@@ -30,7 +30,8 @@ class RoomController extends Controller
         $this->validation($request);
         RoomDetail::create($request->all());
         //return redirect('rooms.addrooms')->with('success','Lodge Added Successfully!!');
-        return redirect('/lodges/show/'.$request->lodge_id)->with('success','Room Added Successfully!!');
+        return back()
+        ->with('success','Image Added successfully.');
     }
 
     public function validation($request)
@@ -76,5 +77,25 @@ class RoomController extends Controller
         return redirect('/rooms/'.$lodge_id)->with('success','Room deleted successfully');
     }
 
-   
+    public function notoccupied($lodge_id,$room_id){
+        $not_occupied=RoomDetail::find($room_id);
+        
+                $not_occupied->room_status="Occupied";
+        
+                $not_occupied->save();
+        
+                return redirect('/rooms/'.$lodge_id);
+    
+    
+    }
+    public function occupied($lodge_id,$room_id){
+        $occupied=RoomDetail::find($room_id);
+        
+                $occupied->room_status="Not Occupied";
+        
+                $occupied->save();
+                return redirect('/rooms/'.$lodge_id);
+        
+        }
+    
 }

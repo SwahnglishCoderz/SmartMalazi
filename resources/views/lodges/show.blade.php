@@ -1,16 +1,23 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="row">
+<div class="row">
         <div class="col-md-4">
-            <ul class="pager" style="margin-top:-2%;margin-bottom:1%;">
-                <li class="previous" ><a href="#" onclick="history.go(-1)">
-                        <span aria-hidden="true">&larr;</span>Back</a>
-                </li>
-            </ul>
-        </div>
+                <ul class="pager" style="margin-top:-2%;margin-bottom:2%;">
+                    <li class="previous" ><a href="#" onclick="history.go(-1)">
+                            <span aria-hidden="true">&larr;</span>Back</a>
+                    </li>
+                </ul>
+            </div>
+    <div class=" col-md-4">
+        <h3 style="color:#F8F8F6;margin-top:-2%;margin-bottom:2%;">~~{{$lodges->lodge_name}}~~</h3>
+    </div>
+    
+</div>
+    <div class="row">
+       
         
-                    <div class="col-md-4">
+                    <div class="col-md-offset-4 col-md-4">
                            
                             <a href="#" data-toggle="modal" style="color:#F8F8F6"data-target="#myModal">Add Room</a>
                 </div>
@@ -21,7 +28,8 @@
           
         
     </div>
-    <div class="row"><div class="col-md-offset-4 col-md-4">   @include('messages.messages')</div></div>
+    
+    
     <div class="row">
         <div class="col-md-12">
             <table class="table table-striped table-bordered" >
@@ -48,7 +56,7 @@
                     <form action="{{route('rooms.store')}}" method="POST">
                             {{ csrf_field() }}
     
-                            @include('messages.messages')
+                           
     
                             <div class="form-group">
                                 <div class="input-group">

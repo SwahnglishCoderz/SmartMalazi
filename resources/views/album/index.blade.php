@@ -103,7 +103,7 @@
       <div class="modal-content" id="modal">
         <div class="modal-header">
           <button type="button" class="close" style="color:#FFF"data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"style="color:#F8F8F6">Add Picture</h4>
+          <h4 class="modal-title"style="color:#F8F8F6">Add Picture  ~~Room {{$rooms->room_name}}~~</h4>
         </div>
         <div class="modal-body">
             <form action="/imageupload/modal" method="POST" enctype="multipart/form-data">

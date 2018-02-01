@@ -35,6 +35,9 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/register','RegistrationController@register');
     Route::post('/register','RegistrationController@postRegister');
 
+    Route::post('/update/{user_id}','ViewLodgeAdminTableController@update');
+    Route::get('/delete/{user_id}','ViewLodgeAdminTableController@delete');
+
     Route::get('/lodges','LodgeController@index')->name('lodges.index');
     Route::get('/lodges/create','LodgeController@create')->name('lodges.create');
     Route::post('/lodges/store','LodgeController@store')->name('lodges.store');
@@ -42,6 +45,10 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/lodges/delete/{id}','LodgeController@delete')->name('lodges.delete');
     Route::get('/lodges/show/{id}','LodgeController@show')->name('lodges.show');
     Route::get('/lodges/edit/{id}','LodgeController@edit')->name('lodges.edit');
+     
+    Route::get('/enable/{id}','LodgeController@enable');
+    Route::get('/disable/{id}','LodgeController@disable');
+    
 
     Route::get('/rooms/{lodge_id}','RoomController@index')->name('rooms.index');
     Route::post('/rooms/store','RoomController@store')->name('rooms.store');
@@ -49,6 +56,10 @@ Route::group(['middleware' => 'admin'], function (){
     Route::post('/rooms/update/{lodge_id}/{room_id}','RoomController@update');
     Route::get('/rooms/delete/{lodge_id}/{room_id}','RoomController@delete')->name('rooms.delete');
     Route::get('/rooms/edit/{lodge_id}/{room_id}','RoomController@edit')->name('rooms.edit');
+
+    Route::get('/notoccupied/{lodge_id}/{room_id}','RoomController@notoccupied');
+    Route::get('/occupied/{lodge_id}/{room_id}','RoomController@occupied');
+
     Route::get('/imageupload/create/{lodge_id}','CreateAlbumController@create')->name('imageupload.create');
     Route::post('/imageupload/store','CreateAlbumController@store');
     Route::post('/imageupload/modal','AddPictureModelController@store');

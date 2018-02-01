@@ -49,11 +49,46 @@
                                     <tr>
                                        
                                         <td ><a href="/lodges/show/{{$lodge->lodge_id}}" style="color:#F8F8F6">{{$lodge->lodge_name}}</a></td>
-                                        <td style="width: 60px"><a href="/lodges/edit/{{$lodge->lodge_id}}" class="btn btn-primary">Edit</a></td>
-                                        <td style="width: 60px"><a href="" class="btn btn-success">Enable</a></td>
-                                        <td style="width: 60px"><a href="/lodges/delete/{{$lodge->lodge_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete the lodge?') ">Delete</a></td>
+                                        <td style="width: 60px"><a href="#" data-toggle="modal" style="color:#F8F8F6"data-target="#myModal{{$lodge->lodge_id}}" class="btn btn-primary">Edit</a></td>
+                                        <td style="width: 60px">
+                                            @if($lodge->disable_enable==0)
+                                            <a href="/enable/{{$lodge->lodge_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to Enable {{$lodge->lodge_name}}?') ">Enable</a>
+                                        @else
+                                        <a href="/disable/{{$lodge->lodge_id}}" class="btn btn-success" onclick="return confirm ('Are you sure you want to Disable {{$lodge->lodge_name}}?') ">Disable</a>
+                                        @endif
+                                        </td>
+                                        <td style="width: 60px"><a href="/lodges/delete/{{$lodge->lodge_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete {{$lodge->lodge_name}}?') ">Delete</a></td>
 
                                     </tr>
+                                </div>
+                                <div id="myModal{{$lodge->lodge_id}}" class="modal fade" role="dialog">
+                                    <div class="modal-dialog" >
+        
+                                        <!-- Modal content-->
+                                        <div class="modal-content" id="modal">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" style="color:#FFF"data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title"style="color:#F8F8F6">Edit Lodge</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form class="form" action="/lodges/update/{{$lodge->lodge_id}}" method="post">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" name="method" value="PUT"/>
+                                                    <div class="form-group">
+                                                        <input type="hidden" value="0" name="disable_enable" />
+                                                        <input type="text" class="form-control" value="{{$lodge->lodge_name}}" required name="lodge_name" placeholder="Lodge Name">
+                                                    </div>
+                                                    
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+                                                        <input type="submit" value="Update" class="btn btn-success pull-right">
+                                                 </div>
+                                                </form>
+                                            </div>
+        
+                                        </div>
+        
+                                    </div>
                                 </div>
                             @endforeach
                         </tbody>

@@ -114,6 +114,7 @@
 <div class="container">
     
     @yield('content')
+    @yield('contentregister')
     @include('layouts.footer')
 </div> <!-- /container -->
 </body>

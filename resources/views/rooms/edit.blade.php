@@ -1,7 +1,7 @@
 <form action="/rooms/update/{{$lodges->lodge_id}}/{{$room->room_id}}" method="POST">
     {{ csrf_field() }}
 
-    @include('messages.messages')
+    
 
     <div class="form-group">
         <div class="input-group">
@@ -41,7 +41,8 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
         <input type="submit" value="Update" class="btn btn-success pull-right">
-    </div>
+ </div>
 </form>

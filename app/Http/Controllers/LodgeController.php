@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Lodge;
-
+use DB;
 class LodgeController extends Controller
 {
     //This controller will deal with managing lodges.
@@ -78,5 +78,27 @@ class LodgeController extends Controller
         return redirect('/lodges')->with('success','Lodge deleted successfully');
 
     }
+
+public function enable($id){
+    $enable=Lodge::find($id);
+    
+            $enable->disable_enable=1;
+    
+            $enable->save();
+    
+return back();
+
+
+}
+public function disable($id){
+    $disable=Lodge::find($id);
+    
+            $disable->disable_enable=0;
+    
+            $disable->save();
+            return back();
+    
+    }
+
 
 }
