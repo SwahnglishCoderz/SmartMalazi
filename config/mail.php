@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'smartmalazi@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'SmartMalazi-Admin'),
+        'address' => env('MAIL_FROM_ADDRESS', 'afchprlegalaid@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'AFCHPR-LegalAid'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','smartmalazi@gmail.com'),
+    'username' => env('MAIL_USERNAME','afchprlegalaid@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD','smartjosa4343'),
+    'password' => env('MAIL_PASSWORD','Pivato2018'),
 
     /*
     |--------------------------------------------------------------------------
