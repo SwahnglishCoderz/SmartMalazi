@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'smartmalazi@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'bix2499@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Admin-SmartMalazi'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME','smartmalazi@gmail.com'),
+    'username' => env('MAIL_USERNAME','bix2499@gmail.com'),
 
-    'password' => env('MAIL_PASSWORD','smartteam4343'),
+    'password' => env('MAIL_PASSWORD','joelinho@1995'),
 
     /*
     |--------------------------------------------------------------------------
