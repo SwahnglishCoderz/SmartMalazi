@@ -20,7 +20,7 @@ Route::get('/not-allowed','ErrorController@notAllowed');
 Route::group(['middleware' => 'visitors'], function (){
 
     Route::get('/','LoginController@login');
-    Route::post('/','LoginController@postLogin')->name('login.visitors');
+    Route::post('/login','LoginController@postLogin')->name('login.visitors');
     Route::get('/forgot-password','ForgotPasswordController@forgotPassword');
     Route::post('/forgot-password','ForgotPasswordController@postForgotPassword');
 
@@ -31,9 +31,8 @@ Route::group(['middleware' => 'visitors'], function (){
 //admin links
 Route::group(['middleware' => 'admin'], function (){
     //Route::get('/admin','AdminController@index')->name('admin.index');
-
-    Route::get('/register','RegistrationController@register');
-    Route::post('/register','RegistrationController@postRegister');
+	Route::get('/register','RegistrationController@register');
+	Route::post('/register','RegistrationController@postRegister');
 
     Route::post('/update/{user_id}','ViewLodgeAdminTableController@update');
     Route::get('/delete/{user_id}','ViewLodgeAdminTableController@delete');
@@ -45,11 +44,19 @@ Route::group(['middleware' => 'admin'], function (){
     Route::get('/lodges/delete/{id}','LodgeController@delete')->name('lodges.delete');
     Route::get('/lodges/show/{id}','LodgeController@show')->name('lodges.show');
     Route::get('/lodges/edit/{id}','LodgeController@edit')->name('lodges.edit');
-     
+
     Route::get('/enable/{id}','LodgeController@enable');
     Route::get('/disable/{id}','LodgeController@disable');
-    
 
+});
+
+//lodge admin links
+
+Route::group(['middleware' => 'lodge-admin'], function (){
+    Route::get('/lodge-admin','LodgeAdminController@index');
+});
+
+Route::group(['middleware' => 'both-users'], function (){
     Route::get('/rooms/{lodge_id}','RoomController@index')->name('rooms.index');
     Route::post('/rooms/store','RoomController@store')->name('rooms.store');
     Route::get('/rooms/create/{lodge_id}','RoomController@create')->name('rooms.create');
@@ -64,14 +71,8 @@ Route::group(['middleware' => 'admin'], function (){
     Route::post('/imageupload/store','CreateAlbumController@store');
     Route::post('/imageupload/modal','AddPictureModelController@store');
     Route::get('/album/index/{lodge_id}/{room_id}','ViewAlbumController@index')->name('album.index');
-    
-    Route::delete('imagedelete/{id}', 'ViewAlbumController@delete');
-});
 
-//lodge admin links
-
-Route::group(['middleware' => 'lodge-admin'], function (){
-    Route::get('/lodge-admin','LodgeAdminController@index');
+    Route::delete('/imagedelete/{id}', 'ViewAlbumController@delete');
 });
 
 Route::get('/activate/{email}/{activationCode}','ActivationController@activate') ;

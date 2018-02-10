@@ -26,7 +26,7 @@
             font-weight: 100;
             height: 100vh;
             margin: 0;
-            background: transparent url("/images/p.jpg");
+            background: transparent url("{{env('APP_URL')}}/images/p.jpg");
         }
 
         #main-footer{
@@ -37,7 +37,7 @@
         }
         #panel{
             color:#EAE9E4;
-        } 
+        }
 
         #b{
             background:#414C5F;
@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <form action="/forgot-password" method="POST">
+                    <form action="{{env('APP_URL')}}/forgot-password" method="POST">
                         {{ csrf_field() }}
 
                         @include('messages.messages')
@@ -84,7 +84,7 @@
                     </form>
                 </div>
             </div>
-            
+
             <footer class="footer" id="main-footer" >
                     <strong>Copyright &copy; 2017 <a href="#">smartMalazi</a>.</strong> All rights reserved.
                   </footer>
@@ -97,6 +97,6 @@
 
 
 </div>
-    
+
 
 </html>

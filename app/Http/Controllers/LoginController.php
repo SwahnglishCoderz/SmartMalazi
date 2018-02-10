@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Sentinel;
 use Cartalyst\Sentinel\Checkpoints\ThrottlingException;
 use Cartalyst\Sentinel\Checkpoints\NotActivatedException;
+use App\Lodge;
 
 class LoginController extends Controller
 {
@@ -16,7 +17,6 @@ class LoginController extends Controller
 
     public function postLogin(Request $request)
     {
-
         try
         {
             $rememberMe = false;
@@ -33,7 +33,9 @@ class LoginController extends Controller
                 }
                 else if($slug == 'lodge-admin')
                 {
-                    return redirect('/lodge-admin');
+                    $lodge_id = Sentinel::getUser()->lodge_id;
+                    //$lodge = Lodge::find($lodge_id);
+                    return redirect('/rooms/'.$lodge_id);
                 }
             }
             else
@@ -55,7 +57,6 @@ class LoginController extends Controller
 
        // return Sentinel::check();
         //dd($request->all());
-
 
     }
 

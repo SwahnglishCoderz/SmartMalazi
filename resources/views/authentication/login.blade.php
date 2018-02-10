@@ -14,15 +14,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <style>
         html, body {
-           
+
             color: #636b6f;
             font-family: 'Raleway', sans-serif;
             font-weight: 100;
             height: 100vh;
             margin: 0;
-           
-         background: transparent url("/images/p.jpg");
-         
+
+         background: transparent url("{{env('APP_URL')}}/images/p.jpg");
+
         }
 #main-footer{
     color:#FFF;
@@ -46,7 +46,7 @@
 #r{
     color:#FFF;
 }
-  
+
     </style>
 
 
@@ -56,7 +56,7 @@
 </head>
 <body>
 <div class="container">
-      
+
     <div class="row">
         <div class="col-md-12">
                         <h1 class="welcome text-center" style="line-height: 0.6;" id="logo">
@@ -96,7 +96,7 @@
                             </div>
                         </div>
 
-                        <a href="/forgot-password"> Forgot your password? </a>
+                        <a href="{{env('APP_URL')}}/forgot-password"> Forgot your password? </a>
 
                         <div class="form-group">
                             <input type="submit" value="Login" class="btn btn-success pull-right">
@@ -112,7 +112,7 @@
     </div>
 </div>
 
-    
+
 </body>
 
 

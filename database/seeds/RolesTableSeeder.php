@@ -14,28 +14,11 @@ class RolesTableSeeder extends Seeder
         DB::table('roles')->insert([
             'slug' => 'admin',
             'name' => 'Admin',
-            
-            
         ]);
 
         DB::table('roles')->insert([
             'slug' => 'lodge-admin',
             'name' => 'Lodge-admin',
-            
-            
         ]);
     }
-
-    public function postRegister(Request $request)
-    {
-        //$user = Sentinel::registerAndActivate($request->all());
-        $user = Sentinel::registerAndActivate(['']);
-
-       
-    }
-
-
-
-
-
 }

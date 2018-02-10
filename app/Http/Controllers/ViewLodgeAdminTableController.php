@@ -17,7 +17,7 @@ class ViewLodgeAdminTableController extends Controller
         ->update( ['users.first_name' =>$request['first_name'],
         'users.last_name' =>$request['last_name'],
         'users.email' =>$request['email'],
-        'lodges.lodge_name' =>$request['lodge_name']
+        'users.lodge_id' =>$request['lodge_id']
         
         
         ]);

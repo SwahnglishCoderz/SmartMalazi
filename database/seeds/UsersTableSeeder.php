@@ -11,14 +11,17 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //Only to be used to register the system admin.
-        DB::table('users')->insert([
-            'first_name' => 'Smart',
-            'last_name' => 'Malazi',
-            'lodge_id' => 1,
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('secret'),
-            
-        ]);
+    	//just to ensure that an admin is registered before everything takes on effect.
+    	$user = Sentinel::registerAndActivate([
+    			"email" => "admin@gmail.com",
+				"first_name" => "admin",
+				"last_name" => "SmartMalazi",
+				"password" => "secret",
+				"lodge_id" => 1,
+    		]);
+
+    	$role = Sentinel::findRoleBySlug('admin');
+
+        $role->users()->attach($user);
     }
 }

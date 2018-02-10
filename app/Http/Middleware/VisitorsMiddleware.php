@@ -25,7 +25,8 @@ class VisitorsMiddleware
             }
             else if(Sentinel::getUser()->roles()->first()->slug == 'lodge-admin')
             {
-                return redirect('/lodge-admin');
+                $lodge_id = Sentinel::getUser()->lodge_id;
+                return redirect('/rooms/'.$lodge_id);
             }
         }
     }

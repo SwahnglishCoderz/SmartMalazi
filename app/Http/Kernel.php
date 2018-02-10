@@ -60,5 +60,6 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\AdminMiddleware::class,
         'visitors' => \App\Http\Middleware\VisitorsMiddleware::class,
         'lodge-admin' => \App\Http\Middleware\LodgeAdminMiddleware::class,
+        'both-users' => \App\Http\Middleware\BothMiddleware::class,
     ];
 }

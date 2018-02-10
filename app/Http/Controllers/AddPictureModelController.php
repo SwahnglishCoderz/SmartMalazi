@@ -15,7 +15,7 @@ class AddPictureModelController extends Controller
         $lodges=Lodge::find($lodge_id);
         $rooms=RoomDetail::orderBy('room_id','desc')->where('lodge_id', $lodge_id)->get();
         return view('imageupload.create')->with(['rooms'=>$rooms,'lodges'=>$lodges]);
-            
+
     }
 public function store(Request $request){
     $this->validation($request);
@@ -29,7 +29,7 @@ public function store(Request $request){
   if($request->hasFile('room_picture')){
   $image=$request->file('room_picture');
   $filename=time().'.'.$image->getClientOriginalExtension();
-  $location=$location='../public/images/'.$filename;
+  $location=$location='images/'.$filename;
   Image::make($image)->resize(800,400)->save($location);
   $photo->room_picture=$filename;
 }
@@ -44,7 +44,7 @@ public function validation($request)
     return $this->validate($request,[
         'picture_caption' =>'required|max:190',
         'room_picture' =>'required',
-        
+
     ]);
 }
 }

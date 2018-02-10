@@ -15,7 +15,7 @@
                     <div class="col-md-offset-2 col-md-4">
                         <h3 style="color:#F8F8F6">{{$lodges->lodge_name}}  </h3>
                     </div>
-    
+
                 </div>
 
 </div>
@@ -29,7 +29,7 @@
             </div>
 
             <div class="panel-body">
-                <form action="/imageupload/store" method="POST" enctype="multipart/form-data">
+                <form action="{{env('APP_URL')}}/imageupload/store" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
                     @include('messages.messages')
@@ -46,11 +46,11 @@
                             </select>
                         </div>
                     </div>
-                    
+
 
                     <div class="form-group">
                         <div class="input-group">
-                        
+
                             <!-- added an array index since no loop is needed to get the lodge id -->
                             <input type="text" name="lodge_id" value="{{$rooms[0]->lodge_id}}" class="hide">
 
@@ -66,10 +66,10 @@
                     </div>
 
                     <div class="form-group">
-    
+
                         <input type="file" name="room_picture" class="btn btn-info"/>
-      
-                        
+
+
                       </div>
 
                     <div class="form-group">

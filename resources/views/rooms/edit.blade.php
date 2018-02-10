@@ -1,7 +1,7 @@
-<form action="/rooms/update/{{$lodges->lodge_id}}/{{$room->room_id}}" method="POST">
+<form action="{{env('APP_URL')}}/rooms/update/{{$lodges->lodge_id}}/{{$room->room_id}}" method="POST">
     {{ csrf_field() }}
 
-    
+
 
     <div class="form-group">
         <div class="input-group">

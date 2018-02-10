@@ -50,18 +50,18 @@
 
                             <tr>
 
-                                <td ><a href="/rooms/show/{{$lodges->lodge_id}}/{{$room->room_id}}" style="color:#F8F8F6">{{$room->room_name}}</a></td>
+                                <td ><a href="{{env('APP_URL')}}/rooms/show/{{$lodges->lodge_id}}/{{$room->room_id}}" style="color:#F8F8F6">{{$room->room_name}}</a></td>
                                 <td style="color:#F8F8F6">{{$room->price}}</td>
                                 <td style="width: 60px"><a href="#" data-toggle="modal" style="color:#F8F8F6"data-target="#myModal{{$room->room_id}}" class="btn btn-primary">Edit</a></td>
-                                <td style="width: 60px"><a href="/album/index/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-primary">Gallery</a></td>
+                                <td style="width: 60px"><a href="{{env('APP_URL')}}/album/index/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-primary">Gallery</a></td>
                                 <td style="width: 60px">
                                     @if($room->room_status=="Not Occupied")
-                                    <a href="/notoccupied/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to change room status?') ">{{$room->room_status}}</a>
+                                    <a href="{{env('APP_URL')}}/notoccupied/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to change room status?') ">{{$room->room_status}}</a>
                                     @else
-                                    <a href="/occupied/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-success" onclick="return confirm ('Are you sure you want to change room status?') ">{{$room->room_status}}</a>
+                                    <a href="{{env('APP_URL')}}/occupied/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-success" onclick="return confirm ('Are you sure you want to change room status?') ">{{$room->room_status}}</a>
                                 @endif
                                 </td>
-                                <td style="width: 60px"><a href="/rooms/delete/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete room {{$room->room_name}}?') ">Delete</a></td>
+                                <td style="width: 60px"><a href="{{env('APP_URL')}}/rooms/delete/{{$lodges->lodge_id}}/{{$room->room_id}}" class="btn btn-danger" onclick="return confirm ('Are you sure you want to delete room {{$room->room_name}}?') ">Delete</a></td>
 
                             </tr>
                         </div>
@@ -94,19 +94,19 @@
         {{$rooms->links()}}
         @else
         <div class="row">
-            <div class="col-md-offset-4 col-md-4"> 
+            <div class="col-md-offset-4 col-md-4">
             <div class="alert alert-info">
             <strong>Info!</strong>Sorry No Rooms Present At the Moment.
           </div>
         </div>
         </div>
-       
+
         @endif
     </div>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
-  
+
       <!-- Modal content-->
       <div class="modal-content" id="modal">
         <div class="modal-header">
@@ -117,7 +117,7 @@
                 <form action="{{route('rooms.store')}}" method="POST">
                         {{ csrf_field() }}
 
-                      
+
                         <div class="form-group">
                             <div class="input-group">
 
@@ -163,9 +163,9 @@
                          </div>
                     </form>
         </div>
-        
+
       </div>
-  
+
     </div>
   </div>
 
@@ -187,4 +187,3 @@
             });
             </script>
 @endsection
-
